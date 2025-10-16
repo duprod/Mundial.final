@@ -1,0 +1,40 @@
+/* Fuente Coolvetica */
+@font-face {
+  font-family: 'Coolvetica';
+  src: url('coolvetica/CoolveticaRg.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Fuente South Africa 2010 */
+@font-face {
+  font-family: 'SouthAfrica';
+  src: url('south africa/south afirkas 2100.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+header {
+  font-family: 'SouthAfrica', sans-serif;
+}
+
+body {
+  font-family: 'SouthAfrica', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(90deg, #850000, #f00000) !important;
+}
+
+/* Carrusel */
+#headerCarousel {
+  max-width: 200px;  /* tamaño máximo del carrusel */
+  margin: 0 auto;
+}
+
+#headerCarousel img {
+  border-radius: 30px;
+  height: 100px;     /* ajusta la altura que quieras */
+  margin: 0px;
+  object-fit: cover; /* recorta sin deformar */
+}
