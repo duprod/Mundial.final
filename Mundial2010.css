@@ -26,6 +26,7 @@ body {
   background: linear-gradient(90deg, #850000, #f00000) !important;
 }
 
+
 /* Carrusel */
 #headerCarousel {
   max-width: 200px;  /* tamaño máximo del carrusel */
@@ -37,4 +38,38 @@ body {
   height: 100px;     /* ajusta la altura que quieras */
   margin: 0px;
   object-fit: cover; /* recorta sin deformar */
+}
+
+.logo-mundial {
+  height: 60px; 
+  /* Prueba a cambiar 60px por 50px o 70px si lo prefieres */
+}
+
+/* Cuando la pantalla sea 'md' (768px) o más grande, 
+  el logo volverá a tener 100px de alto 
+*/
+@media (min-width: 768px) {
+  .logo-mundial {
+    height: 100px;
+  }
+}
+
+#headerCarousel .carousel-item img {
+  height: 60px; /* Misma altura que el logo en móvil */
+  object-fit: cover; /* Evita que la imagen se distorsione (se recorta) */
+  width: 100%;       /* Asegura que ocupe todo el espacio del carrusel */
+}
+
+/* En 'md' (768px) o más grande, vuelve a la altura automática */
+@media (min-width: 768px) {
+  #headerCarousel .carousel-item img {
+    height: auto;
+    object-fit: initial;
+  }
+}
+@media (max-width: 767.98px) {
+  #headerCarousel .carousel-control-prev,
+  #headerCarousel .carousel-control-next {
+    display: none;
+  }
 }
