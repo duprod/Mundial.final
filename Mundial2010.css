@@ -41,7 +41,7 @@ body {
 }
 
 .logo-mundial {
-  height: 60px; 
+  height: 80px; 
   /* Prueba a cambiar 60px por 50px o 70px si lo prefieres */
 }
 
@@ -55,8 +55,8 @@ body {
 }
 
 #headerCarousel .carousel-item img {
-  height: 60px; /* Misma altura que el logo en móvil */
-  object-fit: cover; /* Evita que la imagen se distorsione (se recorta) */
+  height: 90px; /* Misma altura que el logo en móvil */
+  object-fit: contain; /* Evita que la imagen se distorsione (se recorta) */
   width: 100%;       /* Asegura que ocupe todo el espacio del carrusel */
 }
 
