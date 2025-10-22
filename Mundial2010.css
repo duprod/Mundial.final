@@ -19,13 +19,37 @@ header {
 
 body {
   font-family: 'SouthAfrica', sans-serif;
-}
 
+
+  background: linear-gradient(to bottom, #46000d, #ae0009);
+
+  /* MUY IMPORTANTE: 
+    Esto fija el degradado para que no se mueva 
+    cuando haces scroll.
+  */
+  background-attachment: fixed;
+
+  /* Opcional: 
+    Asegura que el degradado cubre toda la altura, 
+    incluso si la página tiene poco contenido.
+  */
+  min-height: 100vh; 
+}
+.green {
+color: #008614;
+}
 /* Navbar */
-.navbar {
-  background: linear-gradient(90deg, #850000, #f00000) !important;
+.yellow-gradient {
+  background: linear-gradient(90deg, #fffff0,rgb(217, 237, 0),#fffc46, #fffd84) !important;
 }
 
+.blue-gradient {
+  background: linear-gradient(90deg, #ADD8E6,#007BFF,#4169E1) !important;
+}
+
+.green-gradient {
+  background: linear-gradient(90deg, #008614,#00b749,#00aa17) !important;
+}
 
 /* Carrusel */
 #headerCarousel {
@@ -73,4 +97,58 @@ body {
     display: none;
   }
 }
+
+
+
+.navbar-nav .nav-link {
+  /* Añadimos una transición suave para el efecto de escala */
+  transition: transform 0.2s ease-in-out; 
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  /* Lo hace un 10% más grande */
+  transform: scale(1.1); 
+  
+  /* Importante: No ponemos ninguna regla de 'color' aquí.
+     De esta forma, el enlace mantiene el color que 
+     le hayas puesto en el HTML (ej. text-green).
+  */
+}
+
+/* Color del encabezado (Header: #, National Team, PL...) */
+/*
+  LA SOLUCIÓN: Añadimos 'th' al selector para apuntar
+  directamente a las CELDAS del encabezado.
+*/
+#clasificacion table thead th {
+  background-color: #246100; /* Tu fondo verde */
+  color: #ffffff;            /* Tu texto rojo oscuro */ 
+}
+
+.verdeclaro {
+  background-color: #246100;
+}
+
+.fifa-blue {
+  background-color: #02122c;
+}
+/* Color de las filas "rayadas" (striping) */
+#clasificacion .table-striped > tbody > tr:nth-child(odd) > * {
+  background-color: #3ca400; /* Verde claro para las rayas */
+color: #ffffff
+}
+
+#clasificacion .table-striped > tbody > tr:nth-child(even) > * {
+  background-color: #246100; /* Fondo blanco para las otras filas */
+  color: #ffffff
+}
+
+/* Color al pasar el ratón (hover) */
+#clasificacion .table-hover > tbody > tr:hover > * {
+  
+  color:black
+}
+
+
 
