@@ -14,17 +14,17 @@
 <body>
 
   <header class="d-flex justify-content-between align-items-center p-2 bg-black text-light">
-  <p class="mb-0">Fifa World Cup</p>
-  <p class="mb-0">South Africa 2010</p>
+  <h1 class="mb-0 fs-6">Fifa World Cup</h1>
+  <h1 class="mb-0 fs-6">South Africa 2010</h1>
 </header>
 
 <section>
-  <nav class="navbar navbar-expand-md flex-md-nowrap">
+  <nav class="navbar navbar-expand-md flex-md-nowrap red-gradient p-4">
     
-    <div class="container-fluid yellow-gradient rounded-4 shadow p-4 mx-auto" style="max-width: 96%">
+    <div class="container-fluid">
 
       <a class="navbar-brand order-1 order-md-1" href="#">
-        <img src="imagenes/logo copia.png" alt="Mundial 2010" class="logo-mundial">
+        <img src="imagenes/logo2010.png" alt="Mundial 2010" class="logo-mundial">
       </a>
 
       <button class="navbar-toggler order-3 order-md-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -34,15 +34,17 @@
       <div class="collapse navbar-collapse order-4 order-md-2 w-100 w-md-auto" id="navbarNav">
         
         <ul class="navbar-nav me-auto">
-          <li class="nav-item"><a class="green nav-link" href="#partidos">Matches</a></li>
-          <li class="nav-item"><a class="green nav-link" href="#clasificacion">Classification</a></li>
-          <li class="nav-item"><a class="green nav-link" href="#datos">Stats</a></li>
-          <li class="nav-item"><a class="green nav-link" href="#selecciones">National teams</a></li>
-          <li class="nav-item"><a class="green nav-link" href="#historia">History</a></li>
-          <li class="nav-item"><a class="green nav-link" href="#fifa">FIFA+</a></li>
+          <li class="nav-item"><a class="greylogo nav-link" href="#partidos">Matches</a></li>
+          <li class="nav-item"><a class="greylogo nav-link" href="#clasificacion">Classification</a></li>
+          <li class="nav-item"><a class="greylogo nav-link" href="#datos">Stats</a></li>
+          <li class="nav-item"><a class="greylogo nav-link" href="#selecciones">National teams</a></li>
+          <li class="nav-item"><a class="greylogo nav-link" href="#historia">History</a></li>
+          <li class="nav-item"><a class="greylogo nav-link" href="#fifa">FIFA+</a></li>
         </ul>
         
-      </div> <div class="order-2 order-md-3 w-50 w-md-auto" style="max-width: 40%;">
+      </div> 
+      
+      <div class="order-2 order-md-3 w-50 w-md-auto" style="max-width: 40%;">
         <div id="headerCarousel" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
@@ -81,10 +83,12 @@
         </div>
       </div>
       
-    </div> </nav>
+    </div> 
+  </nav>
+<section>
 <section id="partidos" class="py-5 partidos">
-    <div class="container-fluid blue-gradient rounded-4 shadow p-4 mx-auto" style="max-width: 96%">
-      <h2 class="text-center mb-4">MATCHES</h2>
+    <div class="container-fluid grey-gradient rounded-4 shadow p-4 mx-auto" style="max-width: 96%">
+      <h2 class="text-center red mb-4">MATCHES</h2>
       
       <div class="accordion" id="matchesAccordion">
 
@@ -938,8 +942,8 @@
   </section>
 
  <section id="clasificacion" class="py-5">
-  <div class="container-fluid green-gradient rounded-4 shadow p-4 mx-auto" style="max-width: 96%;">
-    <h2 class="text-center text-white mb-4">CLASSIFICATION</h2>
+  <div class="container-fluid grey-gradient rounded-4 shadow p-4 mx-auto" style="max-width: 96%;">
+    <h2 class="text-center red mb-4">CLASSIFICATION</h2>
 
     <div class="verdeclaro shadow rounded-4 p-4 mx-auto" style="max-width: 90%;">
       
@@ -988,7 +992,7 @@
             <tr><th>27</th><td>New Zealand</td><td>3</td><td>0</td><td>3</td><td>0</td><td>2</td><td>2</td><td>Group Stage</td></tr>
             <tr><th>28</th><td>Cameroon</td><td>3</td><td>0</td><td>0</td><td>3</td><td>2</td><td>5</td><td>Group Stage</td></tr>
             <tr><th>29</th><td>Ivory Coast</td><td>3</td><td>1</td><td>1</td><td>1</td><td>4</td><td>3</td><td>Group Stage</td></tr>
-_            <tr><th>30</th><td>Italy</td><td>3</td><td>0</td><td>2</td><td>1</td><td>4</td><td>5</td><td>Group Stage</td></tr>
+            <tr><th>30</th><td>Italy</td><td>3</td><td>0</td><td>2</td><td>1</td><td>4</td><td>5</td><td>Group Stage</td></tr>
             <tr><th>31</th><td>France</td><td>3</td><td>0</td><td>1</td><td>2</td><td>1</td><td>4</td><td>Group Stage</td></tr>
             <tr><th>32</th><td>North Korea</td><td>3</td><td>0</td><td>0</td><td>3</td><td>1</td><td>12</td><td>Group Stage</td></tr>
           </tbody>
@@ -1006,19 +1010,84 @@ _            <tr><th>30</th><td>Italy</td><td>3</td><td>0</td><td>2</td><td>1</t
   </section>
 
  <section id="selecciones" class="py-5 ">
-  <div class="container">     
-    <h2 class="text-center mb-4">National teams</h2>
+  <div class="container">
+    <h2 class="text-center mb-4">NATIONAL TEAMS</h2>
 
-    <div class="bg-white rounded-4 shadow p-4 mx-auto" style="max-width: 95%;">
-      <p class="mb-0">
-        Aquí puedes escribir información sobre las selecciones participantes.
-        Este rectángulo usa clases de Bootstrap para tener fondo blanco, bordes redondeados,
-        sombra y márgenes automáticos.
-      </p>
-    </div>
+    <div class="row g-4 justify-content-center">
 
-  </div>
-</section>
+      <div class="col-lg-4 col-md-6">
+        <div class="bg-dark text-white rounded-4 shadow p-4 h-100">
+          <h4 class="text-center mb-3">EUROPE</h4>
+          <ul class="list-unstyled">
+            <li><img src="https://flagcdn.com/w20/es.png" alt="Spain flag" class="me-2"> Spain</li>
+            <li><img src="https://flagcdn.com/w20/de.png" alt="Germany flag" class="me-2"> Germany</li>
+            <li><img src="https://flagcdn.com/w20/nl.png" alt="Netherlands flag" class="me-2"> Netherlands</li>
+            <li><img src="https://flagcdn.com/w20/gb-eng.png" alt="England flag" class="me-2"> England</li>
+            <li><img src="https://flagcdn.com/w20/it.png" alt="Italy flag" class="me-2"> Italy</li>
+            <li><img src="https://flagcdn.com/w20/fr.png" alt="France flag" class="me-2"> France</li>
+            <li><img src="https://flagcdn.com/w20/pt.png" alt="Portugal flag" class="me-2"> Portugal</li>
+            <li><img src="https://flagcdn.com/w20/rs.png" alt="Serbia flag" class="me-2"> Serbia</li>
+            <li><img src="https://flagcdn.com/w20/ch.png" alt="Switzerland flag" class="me-2"> Switzerland</li>
+            <li><img src="https://flagcdn.com/w20/sk.png" alt="Slovakia flag" class="me-2"> Slovakia</li>
+            <li><img src="https://flagcdn.com/w20/dk.png" alt="Denmark flag" class="me-2"> Denmark</li>
+            <li><img src="https://flagcdn.com/w20/gr.png" alt="Greece flag" class="me-2"> Greece</li>
+            <li><img src="https://flagcdn.com/w20/si.png" alt="Slovenia flag" class="me-2"> Slovenia</li>
+            </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="bg-dark text-white rounded-4 shadow p-4 h-100">
+          <h4 class="text-center mb-3">AMERICA</h4>
+          <ul class="list-unstyled">
+            <li><img src="https://flagcdn.com/w20/br.png" alt="Brazil flag" class="me-2"> Brazil</li>
+            <li><img src="https://flagcdn.com/w20/ar.png" alt="Argentina flag" class="me-2"> Argentina</li>
+            <li><img src="https://flagcdn.com/w20/uy.png" alt="Uruguay flag" class="me-2"> Uruguay</li>
+            <li><img src="https://flagcdn.com/w20/py.png" alt="Paraguay flag" class="me-2"> Paraguay</li>
+            <li><img src="https://flagcdn.com/w20/cl.png" alt="Chile flag" class="me-2"> Chile</li>
+            <li><img src="https://flagcdn.com/w20/mx.png" alt="Mexico flag" class="me-2"> Mexico</li>
+            <li><img src="https://flagcdn.com/w20/us.png" alt="United States flag" class="me-2"> United States</li>
+            <li><img src="https://flagcdn.com/w20/hn.png" alt="Honduras flag" class="me-2"> Honduras</li>
+            </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="bg-dark text-white rounded-4 shadow p-4 h-100">
+          <h4 class="text-center mb-3">AFRICA</h4>
+          <ul class="list-unstyled">
+            <li><img src="https://flagcdn.com/w20/za.png" alt="South Africa flag" class="me-2"> South Africa (Host)</li>
+            <li><img src="https://flagcdn.com/w20/gh.png" alt="Ghana flag" class="me-2"> Ghana</li>
+            <li><img src="https://flagcdn.com/w20/ng.png" alt="Nigeria flag" class="me-2"> Nigeria</li>
+            <li><img src="https://flagcdn.com/w20/cm.png" alt="Cameroon flag" class="me-2"> Cameroon</li>
+            <li><img src="https://flagcdn.com/w20/dz.png" alt="Algeria flag" class="me-2"> Algeria</li>
+            <li><img src="https://flagcdn.com/w20/ci.png" alt="Ivory Coast flag" class="me-2"> Ivory Coast</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="bg-dark text-white rounded-4 shadow p-4 h-100">
+          <h4 class="text-center mb-3">ASIA</h4>
+          <ul class="list-unstyled">
+            <li><img src="https://flagcdn.com/w20/jp.png" alt="Japan flag" class="me-2"> Japan</li>
+            <li><img src="https://flagcdn.com/w20/kr.png" alt="South Korea flag" class="me-2"> South Korea</li>
+            <li><img src="https://flagcdn.com/w20/kp.png" alt="North Korea flag" class="me-2"> North Korea</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="bg-dark text-white rounded-4 shadow p-4 h-100">
+          <h4 class="text-center mb-3">OCEANIA</h4>
+          <ul class="list-unstyled">
+            <li><img src="https://flagcdn.com/w20/au.png" alt="Australia flag" class="me-2"> Australia</li>
+            <li><img src="https://flagcdn.com/w20/nz.png" alt="New Zealand flag" class="me-2"> New Zealand</li>
+            </ul>
+        </div>
+      </div>
+
+    </div> </div> </section>
 
   <section id="noticias" class="py-5">
     <div class="container">
@@ -1037,7 +1106,7 @@ _            <tr><th>30</th><td>Italy</td><td>3</td><td>0</td><td>2</td><td>1</t
   <section id="fifa" class="py-5">
   <div class="container-fluid fifa-blue rounded-4 shadow p-4 mx-auto" style="max-width: 96%;">
       <h2 class="text-center mb-4">
-        <img src="/Mundial2010/imagenes/fifa+.png" alt="Logo de FIFA+" style="width: 20%; max-width: 120px;">
+        <img src="./imagenes/fifa+.png" alt="Logo de FIFA+" style="width: 20%; max-width: 120px;">
       </h2>
   
 
@@ -1045,56 +1114,56 @@ _            <tr><th>30</th><td>Italy</td><td>3</td><td>0</td><td>2</td><td>1</t
 
     <div class="col-lg-3 col-md-4 col-sm-6">
       <a href="https://www.plus.fifa.com/es/player/06700cc2-f0a5-450c-b7fb-e20bd06f4bb7?catalogId=b04272b7-7650-447f-80da-7261943b23db&entryPoint=Default">
-      <img src="/Mundial2010/imagenes/final+.jpg" 
+      <img src="./imagenes/portadas/final.jpg" 
            class="img-fluid rounded shadow-sm" alt="spain vs netherlands final">
       </a>
     </div>
 
     <div class="col-lg-3 col-md-4 col-sm-6">
       <a href="https://www.plus.fifa.com/es/player/d1572a49-bcd0-4cc9-998c-cd65ac3726a2?catalogId=7d8f0987-95e8-42e1-bc40-00423ae7e8c5&entryPoint=Default">
-      <img src="/Mundial2010/imagenes/third+.jpg" 
+      <img src="./imagenes/portadas/third.jpg" 
            class="img-fluid rounded shadow-sm" alt="germany vs uruguay third place">
       </a>
     </div>
 
     <div class="col-lg-3 col-md-4 col-sm-6">
       <a href="https://www.plus.fifa.com/en/player/f3a01be7-04ec-4609-abc6-c14cd33e290a?catalogId=10dac8c1-e843-40e0-a940-51d8d39824ce&entryPoint=Default">
-      <img src="/Mundial2010/imagenes/semifinal1+.jpg" 
+      <img src="./imagenes/portadas/semifinal2.jpg" 
            class="img-fluid rounded shadow-sm" alt="uruguay vs netherlands semi-final">
       </a>
     </div>
 
     <div class="col-lg-3 col-md-4 col-sm-6">
       <a href="https://www.plus.fifa.com/en/player/bc8ea099-692b-4b44-975a-e7aca32318d8?catalogId=eeba1ca6-d534-4f5e-a952-97f6f3292474&entryPoint=Default">
-      <img src="/Mundial2010/imagenes/semifinal2+.jpg" 
+      <img src="./imagenes/portadas/semifinal2.jpg" 
            class="img-fluid rounded shadow-sm" alt="germany vs spain semi-final">
       </a>
     </div>
 
      <div class="col-lg-3 col-md-4 col-sm-6">
       <a href="https://www.plus.fifa.com/en/player/d562e71c-d882-4187-afbd-70454b078ecc?catalogId=e8503777-0a34-4896-b0e2-8dab4baf9aea&entryPoint=Default">
-      <img src="/Mundial2010/imagenes/quarter1+.jpg"
+      <img src="./imagenes/portadas/quarter1.jpg"
            class="img-fluid rounded shadow-sm" alt="netherlands vs brazil quarter-final">
       </a>
     </div>
 
      <div class="col-lg-3 col-md-4 col-sm-6">
       <a href="https://www.plus.fifa.com/es/player/b760cb51-307d-4dd2-8021-93cdce9c90c1?catalogId=9644952c-5f26-4be8-bcf4-c7d3d481d982&entryPoint=Default">
-      <img src="/Mundial2010/imagenes/quarter2+.jpg"
+      <img src="./imagenes/portadas/quarter2.jpg"
            class="img-fluid rounded shadow-sm" alt="uruguay vs ghana quarter-final">
       </a>
     </div>
 
      <div class="col-lg-3 col-md-4 col-sm-6">
       <a href="https://www.plus.fifa.com/es/player/950291b9-ab4e-4012-8d79-970f5ca09508?catalogId=a02262a9-1ef0-46cc-b910-071ca8d430d8&entryPoint=Default">
-      <img src="/Mundial2010/imagenes/quarter3+.jpg"
+      <img src="./imagenes/portadas/quarter3.jpg"
            class="img-fluid rounded shadow-sm" alt="paraguay vs spain quarter-final">
       </a>
     </div>
 
      <div class="col-lg-3 col-md-4 col-sm-6">
       <a href="https://www.plus.fifa.com/es/player/5106576c-1bb0-4759-bac1-57ec9152ba3d?catalogId=e692c874-82e4-45a5-a85c-c4644b4ec4c7&entryPoint=Default">
-      <img src="/Mundial2010/imagenes/quarter4+.jpg"
+      <img src="./imagenes/portadas/quarter4.jpg"
            class="img-fluid rounded shadow-sm" alt="argentina vs germany quarter-final">
       </a>
     </div>

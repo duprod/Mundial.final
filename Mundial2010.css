@@ -21,7 +21,7 @@ body {
   font-family: 'SouthAfrica', sans-serif;
 
 
-  background: linear-gradient(to bottom, #46000d, #ae0009);
+  background: linear-gradient(to bottom, #630000, #a10000);
 
   /* MUY IMPORTANTE: 
     Esto fija el degradado para que no se mueva 
@@ -35,16 +35,23 @@ body {
   */
   min-height: 100vh; 
 }
-.green {
-color: #008614;
+.greylogo {
+color: #d4d4d4;
 }
 /* Navbar */
-.yellow-gradient {
-  background: linear-gradient(90deg, #fffff0,rgb(217, 237, 0),#fffc46, #fffd84) !important;
+.red-gradient {
+  background: linear-gradient(90deg, #630000,#840000, #a00000, #f27777) !important;
+}
+.red{
+  color: #630000;
+}
+.navbar {
+  /* box-shadow: [offset-y] [offset-x] [blur] [color-con-opacidad]; */
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.6);
 }
 
-.blue-gradient {
-  background: linear-gradient(90deg, #ADD8E6,#007BFF,#4169E1) !important;
+.grey-gradient {
+  background: linear-gradient(90deg, #d4d4d4,#aaaaaa,#e5e5e5) !important;
 }
 
 .green-gradient {
@@ -100,20 +107,15 @@ color: #008614;
 
 
 
-.navbar-nav .nav-link {
-  /* Añadimos una transición suave para el efecto de escala */
+.navbar-nav .nav-link.greylogo {
+  color: #d4d4d4;
   transition: transform 0.2s ease-in-out; 
 }
 
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link:focus {
-  /* Lo hace un 10% más grande */
+.navbar-nav .nav-link.greylogo:hover,
+.navbar-nav .nav-link.greylogo:focus {
   transform: scale(1.1); 
-  
-  /* Importante: No ponemos ninguna regla de 'color' aquí.
-     De esta forma, el enlace mantiene el color que 
-     le hayas puesto en el HTML (ej. text-green).
-  */
+  color: #bebebe;
 }
 
 /* Color del encabezado (Header: #, National Team, PL...) */
@@ -122,12 +124,12 @@ color: #008614;
   directamente a las CELDAS del encabezado.
 */
 #clasificacion table thead th {
-  background-color: #246100; /* Tu fondo verde */
-  color: #ffffff;            /* Tu texto rojo oscuro */ 
+  background-color: #630000; /* Tu fondo verde */
+  color: #d4d4d4;            /* Tu texto rojo oscuro */ 
 }
 
 .verdeclaro {
-  background-color: #246100;
+  background-color: #630000;
 }
 
 .fifa-blue {
@@ -135,20 +137,30 @@ color: #008614;
 }
 /* Color de las filas "rayadas" (striping) */
 #clasificacion .table-striped > tbody > tr:nth-child(odd) > * {
-  background-color: #3ca400; /* Verde claro para las rayas */
-color: #ffffff
+  background-color: #9e0000; /* Verde claro para las rayas */
+color: #d4d4d4
 }
 
 #clasificacion .table-striped > tbody > tr:nth-child(even) > * {
-  background-color: #246100; /* Fondo blanco para las otras filas */
-  color: #ffffff
+  background-color: #630000; /* Fondo blanco para las otras filas */
+  color: #d4d4d4
 }
 
 /* Color al pasar el ratón (hover) */
 #clasificacion .table-hover > tbody > tr:hover > * {
-  
-  color:black
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.6);
+  color:#ffffff
 }
 
+#fifa .row img {
+  /* Preparamos la transición para que el efecto sea suave */
+  transition: all 0.3s ease-in-out;
+}
 
-
+#fifa .row img:hover {
+  /* Añadimos una sombra más grande y oscura */
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.25);
+  
+  /* También añadimos un ligero zoom para que "salte" */
+  transform: scale(1.03); 
+}
