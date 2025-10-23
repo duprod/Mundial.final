@@ -164,3 +164,146 @@ color: #d4d4d4
   /* También añadimos un ligero zoom para que "salte" */
   transform: scale(1.03); 
 }
+
+/* Estilos base para todas las tarjetas de continente */
+#selecciones .row > div > div { /* Selecciona el div interior con las clases */
+  position: relative; /* Necesario para superponer el color oscuro */
+  background-size: cover; /* Hace que la imagen cubra todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+/* Pseudo-elemento para añadir una capa oscura semitransparente */
+#selecciones .row > div > div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #680000ec; /* Color negro con 60% de opacidad */
+  border-radius: inherit; /* Hereda el redondeo del div padre */
+  z-index: 1; /* Se pone encima del fondo pero debajo del texto */
+}
+
+/* Asegura que el contenido (texto) esté por encima de la capa oscura */
+#selecciones .row > div > div > * {
+  position: relative;
+  z-index: 2;
+}
+
+#selecciones .row .col-lg-4 > div h4,
+#selecciones .row .col-lg-4 > div li {
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+#selecciones .row .col-lg-4 > div:hover h4 {
+  text-shadow: 1px 1px 3px rgb(0, 0, 0);
+}
+
+#selecciones .row .col-lg-4 > div:hover li {
+  text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
+}
+
+#selecciones .row .col-lg-4 > div {
+  transition: transform 0.3s ease-in-out;
+}
+
+#selecciones .row > div > div::before {
+  transition: background-color 0.3s ease-in-out;
+}
+
+#selecciones .row .col-lg-4 > div:hover {
+  transform: scale(1.03);
+}
+
+#selecciones .row .col-lg-4 > div:hover::before {
+  background-color: rgba(112, 0, 0, 0.81);
+}
+
+
+/* --- Define la imagen de fondo para cada continente --- */
+
+/* Reemplaza './ruta/...' con la ruta correcta a TUS imágenes */
+.card-europe {
+  background-image: url('./imagenes/EUROPA.png'); /* ¡CAMBIA ESTA RUTA! */
+}
+
+.card-america {
+  background-image: url('./imagenes/AMERICA.png'); /* ¡CAMBIA ESTA RUTA! */
+}
+
+.card-africa {
+  background-image: url('./imagenes/AFRICA.png'); /* ¡CAMBIA ESTA RUTA! */
+}
+
+.card-asia {
+  background-image: url('./imagenes/ASIA.png'); /* ¡CAMBIA ESTA RUTA! */
+}
+
+.card-oceania {
+  background-image: url('./imagenes/OCEANIA.png'); /* ¡CAMBIA ESTA RUTA! */
+}
+
+/* --- ACCORDION STYLE OVERRIDES --- */
+
+/* Style for each accordion item (optional: border color) */
+#partidos .accordion-item {
+  border-color: #dee2e6; /* Example: light grey border */
+  /* background-color: #f8f9fa; */ /* Uncomment to change item background */
+}
+
+/* Style for the accordion button (header background and text color) */
+#partidos .accordion-button {
+  background-color: #700000; /* Example: light grey background */
+  color: #d4d4d4;           /* Example: dark text */
+  font-weight: normal;         /* Make header text bold */
+}
+
+/* Style for the accordion button WHEN IT'S EXPANDED (active) */
+#partidos .accordion-button:not(.collapsed) {
+  background-color: #60000a; /* Example: Bootstrap's red color */
+  color: #d4d4d4;              /* White text when expanded */
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .125); /* Default Bootstrap shadow */
+}
+
+/* Change the color of the accordion icon (arrow) */
+/* This uses SVG filters, a bit complex but effective */
+#partidos .accordion-button::after {
+  /* Default icon color (when collapsed) - targeting the SVG */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e"); /* Dark icon */
+}
+
+/* Icon color when the button is EXPANDED */
+#partidos .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e"); /* White icon */
+  transform: rotate(-180deg); /* Default rotation */
+}
+
+/* Style for the accordion body (content background) */
+#partidos .accordion-body {
+  background-color: white; /* Example: white background for content */
+  padding: 1rem 1.25rem;  /* Default Bootstrap padding */
+}
+
+/* --- TABS INSIDE ACCORDION --- */
+
+/* Style for the inactive tabs */
+#partidos .nav-tabs .nav-link {
+  color: #60000a; /* Example: Red text for inactive tabs */
+  border-color: #d4d4d4 #d4d4d4 #d4d4d4; /* Match bottom border to active color */
+}
+
+/* Style for the active tab and hover state */
+#partidos .nav-tabs .nav-link.active,
+#partidos .nav-tabs .nav-item.show .nav-link,
+#partidos .nav-tabs .nav-link:hover {
+  color: white;              /* White text */
+  background-color: #680000; /* Red background */
+  border-color: #60000a #60000a #60000a; /* Red border */
+}
+
+#partidos .list-group-item span.badge.bg-danger {
+  background-color: #680000 !important; /* Cambia este color y ¡OJO con el !important */
+  color: white !important;             /* Cambia si hace falta */
+}

@@ -85,21 +85,23 @@
       
     </div> 
   </nav>
-<section>
+</section>
 <section id="partidos" class="py-5 partidos">
-    <div class="container-fluid grey-gradient rounded-4 shadow p-4 mx-auto" style="max-width: 96%">
-      <h2 class="text-center red mb-4">MATCHES</h2>
-      
-      <div class="accordion" id="matchesAccordion">
+  <div class="container-fluid grey-gradient rounded-4 shadow p-4 mx-auto" style="max-width: 96%">
+    <h2 class="text-center red mb-4">MATCHES</h2>
+    
+    <div class="accordion" id="matchesAccordion">
 
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingGroup">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGroup" aria-expanded="true" aria-controls="collapseGroup">
-              <strong>Group Phase</strong>
-            </button>
-          </h2>
-          <div id="collapseGroup" class="accordion-collapse collapse show" aria-labelledby="headingGroup" data-bs-parent="#matchesAccordion">
-            <div class="accordion-body">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingGroup">
+          
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGroup" aria-expanded="false" aria-controls="collapseGroup">
+            <strong>Group Phase</strong>
+          </button>
+        </h2>
+        
+        <div id="collapseGroup" class="accordion-collapse collapse" aria-labelledby="headingGroup" data-bs-parent="#matchesAccordion">
+          <div class="accordion-body">
               
               <ul class="nav nav-tabs nav-fill flex-wrap" id="groupTabs" role="tablist">
                 <li class="nav-item" role="presentation">
@@ -945,7 +947,7 @@
   <div class="container-fluid grey-gradient rounded-4 shadow p-4 mx-auto" style="max-width: 96%;">
     <h2 class="text-center red mb-4">CLASSIFICATION</h2>
 
-    <div class="verdeclaro shadow rounded-4 p-4 mx-auto" style="max-width: 90%;">
+    <div class="verdeclaro shadow rounded-4 p-4 mx-auto" style="max-width: 99%;">
       
       <div class="table-responsive">
         <table class="table table-borderless table-striped table-hover mb-0">
@@ -1010,15 +1012,15 @@
   </section>
 
  <section id="selecciones" class="py-5 ">
-  <div class="container">
-    <h2 class="text-center mb-4">NATIONAL TEAMS</h2>
+  <div class="container-fluid grey-gradient rounded-4 shadow p-4 mx-auto" style="max-width: 96%;">
+    <h2 class="text-center red mb-4">NATIONAL TEAMS</h2>
 
     <div class="row g-4 justify-content-center">
 
       <div class="col-lg-4 col-md-6">
-        <div class="bg-dark text-white rounded-4 shadow p-4 h-100">
+        <div class="bg-dark text-white card-europe rounded-4 shadow p-4 h-100">
           <h4 class="text-center mb-3">EUROPE</h4>
-          <ul class="list-unstyled">
+          <ul class="list-unstyled text-center text-start ps-0">
             <li><img src="https://flagcdn.com/w20/es.png" alt="Spain flag" class="me-2"> Spain</li>
             <li><img src="https://flagcdn.com/w20/de.png" alt="Germany flag" class="me-2"> Germany</li>
             <li><img src="https://flagcdn.com/w20/nl.png" alt="Netherlands flag" class="me-2"> Netherlands</li>
@@ -1037,9 +1039,9 @@
       </div>
 
       <div class="col-lg-4 col-md-6">
-        <div class="bg-dark text-white rounded-4 shadow p-4 h-100">
+        <div class="bg-dark text-white card-america rounded-4 shadow p-4 h-100">
           <h4 class="text-center mb-3">AMERICA</h4>
-          <ul class="list-unstyled">
+          <ul class="list-unstyled text-center text-start ps-0">
             <li><img src="https://flagcdn.com/w20/br.png" alt="Brazil flag" class="me-2"> Brazil</li>
             <li><img src="https://flagcdn.com/w20/ar.png" alt="Argentina flag" class="me-2"> Argentina</li>
             <li><img src="https://flagcdn.com/w20/uy.png" alt="Uruguay flag" class="me-2"> Uruguay</li>
@@ -1053,9 +1055,9 @@
       </div>
 
       <div class="col-lg-4 col-md-6">
-        <div class="bg-dark text-white rounded-4 shadow p-4 h-100">
+        <div class="bg-dark text-white card-africa rounded-4 shadow p-4 h-100">
           <h4 class="text-center mb-3">AFRICA</h4>
-          <ul class="list-unstyled">
+          <ul class="list-unstyled text-center text-start ps-0">
             <li><img src="https://flagcdn.com/w20/za.png" alt="South Africa flag" class="me-2"> South Africa (Host)</li>
             <li><img src="https://flagcdn.com/w20/gh.png" alt="Ghana flag" class="me-2"> Ghana</li>
             <li><img src="https://flagcdn.com/w20/ng.png" alt="Nigeria flag" class="me-2"> Nigeria</li>
@@ -1067,9 +1069,9 @@
       </div>
 
       <div class="col-lg-4 col-md-6">
-        <div class="bg-dark text-white rounded-4 shadow p-4 h-100">
+        <div class="bg-dark text-white card-asia rounded-4 shadow p-4 h-100">
           <h4 class="text-center mb-3">ASIA</h4>
-          <ul class="list-unstyled">
+          <ul class="list-unstyled text-center text-start ps-0">
             <li><img src="https://flagcdn.com/w20/jp.png" alt="Japan flag" class="me-2"> Japan</li>
             <li><img src="https://flagcdn.com/w20/kr.png" alt="South Korea flag" class="me-2"> South Korea</li>
             <li><img src="https://flagcdn.com/w20/kp.png" alt="North Korea flag" class="me-2"> North Korea</li>
@@ -1078,9 +1080,9 @@
       </div>
 
       <div class="col-lg-4 col-md-6">
-        <div class="bg-dark text-white rounded-4 shadow p-4 h-100">
+        <div class="bg-dark text-white card-oceania rounded-4 shadow p-4 h-100">
           <h4 class="text-center mb-3">OCEANIA</h4>
-          <ul class="list-unstyled">
+          <ul class="list-unstyled text-center text-start ps-0">
             <li><img src="https://flagcdn.com/w20/au.png" alt="Australia flag" class="me-2"> Australia</li>
             <li><img src="https://flagcdn.com/w20/nz.png" alt="New Zealand flag" class="me-2"> New Zealand</li>
             </ul>
