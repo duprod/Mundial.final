@@ -40,14 +40,14 @@ color: #d4d4d4;
 }
 /* Navbar */
 .red-gradient {
-  background: linear-gradient(90deg, #630000,#840000, #a00000, #f27777) !important;
+  background: linear-gradient(90deg, #840000,#a00000, #a00000, #f27777) !important;
 }
 .red{
   color: #630000;
 }
 .navbar {
   /* box-shadow: [offset-y] [offset-x] [blur] [color-con-opacidad]; */
-  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.6);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .grey-gradient {
@@ -166,7 +166,7 @@ color: #d4d4d4
 }
 
 /* Estilos base para todas las tarjetas de continente */
-#selecciones .row > div > div { /* Selecciona el div interior con las clases */
+#datos .row > div > div { /* Selecciona el div interior con las clases */
   position: relative; /* Necesario para superponer el color oscuro */
   background-size: cover; /* Hace que la imagen cubra todo el div */
   background-position: center; /* Centra la imagen */
@@ -174,7 +174,27 @@ color: #d4d4d4
 }
 
 /* Pseudo-elemento para añadir una capa oscura semitransparente */
-#selecciones .row > div > div::before {
+#datos.row > div > div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #680000ec; /* Color negro con 60% de opacidad */
+  border-radius: inherit; /* Hereda el redondeo del div padre */
+  z-index: 1; /* Se pone encima del fondo pero debajo del texto */
+}
+
+#datos .row > div > div { /* Selecciona el div interior con las clases */
+  position: relative; /* Necesario para superponer el color oscuro */
+  background-size: cover; /* Hace que la imagen cubra todo el div */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+/* Pseudo-elemento para añadir una capa oscura semitransparente */
+#datos .row > div > div::before {
   content: "";
   position: absolute;
   top: 0;
@@ -187,40 +207,97 @@ color: #d4d4d4
 }
 
 /* Asegura que el contenido (texto) esté por encima de la capa oscura */
+#datos .row > div > div > * {
+  position: relative;
+  z-index: 2;
+}
+
+#datos .row .col-lg-4 > div h4,
+#datos .row .col-lg-4 > div li {
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+#datos .row .col-lg-4 > div:hover h4 {
+  text-shadow: 1px 1px 3px rgb(0, 0, 0);
+}
+
+#datos .row .col-lg-4 > div:hover li {
+  text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
+}
+
+#datos .row .col-lg-4 > div {
+  transition: transform 0.3s ease-in-out;
+}
+
+#datos .row > div > div::before {
+  transition: background-color 0.3s ease-in-out;
+}
+
+#datos .row .col-lg-4 > div:hover {
+  transform: scale(1.03);
+}
+
+#datos .row .col-lg-4 > div:hover::before {
+  background-color: rgba(112, 0, 0, 0.81);
+}
+#selecciones .row > div > div {
+  position: relative; /* Necesario para superponer el pseudo-elemento */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Transición para el efecto de zoom (scale) */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Pseudo-elemento para añadir la capa oscura semitransparente */
+#selecciones .row > div > div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #680000ec; /* Tu color oscuro con opacidad */
+  border-radius: inherit; /* Hereda el redondeo del div padre */
+  z-index: 1; /* Se pone encima del fondo pero debajo del texto */
+  /* Transición para el cambio de color en hover */
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Asegura que el contenido (texto) esté por encima de la capa oscura */
 #selecciones .row > div > div > * {
   position: relative;
   z-index: 2;
 }
 
+/* Transición para la sombra del texto en hover */
 #selecciones .row .col-lg-4 > div h4,
 #selecciones .row .col-lg-4 > div li {
   transition: text-shadow 0.3s ease-in-out;
 }
 
-#selecciones .row .col-lg-4 > div:hover h4 {
-  text-shadow: 1px 1px 3px rgb(0, 0, 0);
-}
 
-#selecciones .row .col-lg-4 > div:hover li {
-  text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
-}
+/* --- EFECTOS HOVER --- */
 
-#selecciones .row .col-lg-4 > div {
-  transition: transform 0.3s ease-in-out;
-}
-
-#selecciones .row > div > div::before {
-  transition: background-color 0.3s ease-in-out;
-}
-
+/* Efecto de zoom a la tarjeta */
 #selecciones .row .col-lg-4 > div:hover {
   transform: scale(1.03);
 }
 
+/* Cambio de color de la capa oscura al pasar el ratón */
 #selecciones .row .col-lg-4 > div:hover::before {
   background-color: rgba(112, 0, 0, 0.81);
 }
 
+/* Sombra en el título al pasar el ratón */
+#selecciones .row .col-lg-4 > div:hover h4 {
+  text-shadow: 1px 1px 3px rgb(0, 0, 0);
+}
+
+/* Sombra en la lista al pasar el ratón */
+#selecciones .row .col-lg-4 > div:hover li {
+  text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
+}
 
 /* --- Define la imagen de fondo para cada continente --- */
 
@@ -243,6 +320,30 @@ color: #d4d4d4
 
 .card-oceania {
   background-image: url('./imagenes/OCEANIA.png'); /* ¡CAMBIA ESTA RUTA! */
+}
+
+.card-goals {
+  background-image: url('./imagenes/AWARDS/Muller1.png'); /* ¡CAMBIA ESTA RUTA! */
+}
+
+.card-asists {
+  background-image: url('./imagenes/AWARDS/kaka.png'); /* ¡CAMBIA ESTA RUTA! */
+}
+
+.card-clean {
+  background-image: url('./imagenes/AWARDS/casillas.png'); /* ¡CAMBIA ESTA RUTA! */
+}
+
+.card-pases {
+  background-image: url('./imagenes/AWARDS/xavi.png'); /* ¡CAMBIA ESTA RUTA! */
+}
+
+.card-ga {
+  background-image: url('./imagenes/AWARDS/muller2.png'); /* ¡CAMBIA ESTA RUTA! */
+}
+
+.card-awards {
+  background-image: url('./imagenes/AWARDS/premios.png'); /* ¡CAMBIA ESTA RUTA! */
 }
 
 /* --- ACCORDION STYLE OVERRIDES --- */
@@ -269,16 +370,6 @@ color: #d4d4d4
 
 /* Change the color of the accordion icon (arrow) */
 /* This uses SVG filters, a bit complex but effective */
-#partidos .accordion-button::after {
-  /* Default icon color (when collapsed) - targeting the SVG */
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e"); /* Dark icon */
-}
-
-/* Icon color when the button is EXPANDED */
-#partidos .accordion-button:not(.collapsed)::after {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e"); /* White icon */
-  transform: rotate(-180deg); /* Default rotation */
-}
 
 /* Style for the accordion body (content background) */
 #partidos .accordion-body {
@@ -304,6 +395,10 @@ color: #d4d4d4
 }
 
 #partidos .list-group-item span.badge.bg-danger {
-  background-color: #680000 !important; /* Cambia este color y ¡OJO con el !important */
+  background-color: #680000!important; /* Cambia este color y ¡OJO con el !important */
   color: white !important;             /* Cambia si hace falta */
+}
+
+.imagen-balon {
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
 }
