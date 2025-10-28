@@ -1,22 +1,22 @@
-@font-face {
+@font-face { /* Importa la fuente personalizada "SouthAfrica" */
   font-family: 'SouthAfrica';
   src: url('./fuentes/south africa/south afirkas 2100.ttf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
-body {
+body { /* Font principal i fons amb degradat*/
   font-family: 'SouthAfrica', sans-serif;
   min-height: 100vh;
   margin: 0;
-  background: linear-gradient(to bottom, #630000, #a10000); /* degradado original */
+  background: linear-gradient(to bottom, #630000, #a10000); /* degradadat original */
   background-attachment: fixed;
-  position: relative; /* necesario para el pseudo-elemento */
+  position: relative; 
 }
 
-body::before {
+body::before { /* Capa de imatge de fons */
   content: "";
-  position: fixed;       /* queda fijo mientras se hace scroll */
+  position: fixed;       /* queda fixa la imatge */
   top: 0;
   left: 0;
   width: 100%;
@@ -25,26 +25,26 @@ body::before {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.3;          /* ajusta la opacidad deseada */
-  z-index: -1;            /* detrás del contenido */
+  opacity: 0.3;          /* ajusta la opacitat */
+  z-index: -1;            /* al fondo*/
 }
 
 
 header {
-  font-family: 'SouthAfrica', sans-serif;
+  font-family: 'SouthAfrica', sans-serif; /* Font personalitzada per al header */
 }
 
 .red-gradient {
-  background: linear-gradient(90deg, #840000,#a00000, #a00000, #f27777) !important;
+  background: linear-gradient(90deg, #840000,#a00000, #a00000, #f27777) !important; /* degradat vermell important per a que tingui prioritat abans que les clases de bootstrap*/
 }
 
-.container-fluid.grey-gradient {
+.container-fluid.grey-gradient { /* Contenidor amb fons de gradient gris + imatge de fons */
   position: relative;
   overflow: hidden;
-  background: none; /* eliminamos fondo del contenedor */
+  background: none; 
 }
 
-.container-fluid.grey-gradient::before {
+.container-fluid.grey-gradient::before { /* Capa de fons amb imatge i degradat gris */
   content: "";
   position: absolute;
   top: 0;
@@ -52,7 +52,6 @@ header {
   width: 100%;
   height: 100%;
 
-  /* gradiente encima + imagen de fondo con opacidad */
   background-image: 
     linear-gradient(90deg, rgba(212,212,212,0.85), rgba(170,170,170,0.85), rgba(229,229,229,0.85)),
     url('./imagenes/fondo-de-gradiente-abstracto-con-un-efecto-granulado.jpg');
@@ -61,36 +60,36 @@ header {
   background-position: center;
   background-repeat: no-repeat;
 
-  z-index: -1; /* queda detrás del contenido */
+  z-index: -1; /* al fondo */
 }
-.red {
+.red { /*color vermell*/
   color: #630000;
 }
 
-.greylogo {
+.greylogo { /*colorgris*/
   color: #d4d4d4;
 }
 
-.navbar {
+.navbar { /*ombra del navbar*/
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
-.logo-mundial {
+.logo-mundial { /* mida del logo del navbar */
   height: 80px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) { /* mida del logo del navbar en pantalles grans */
   .logo-mundial {
     height: 100px;
   }
 }
 
-#headerCarousel {
+#headerCarousel { /* mida del carousel del header */
   max-width: 200px;
   margin: 0 auto;
 }
 
-#headerCarousel img {
+#headerCarousel img { /* mida i estil de les imatges del carousel */
   border-radius: 30px;
   height: 100px;
   margin: 0px;
@@ -103,58 +102,58 @@ header {
   width: 100%;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) { /* mida del carousel i imatges en pantalles grans */
   #headerCarousel .carousel-item img {
     height: auto;
     object-fit: initial;
   }
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 767.98px) { /* amaga els controls del carousel en pantalles petites */
   #headerCarousel .carousel-control-prev,
   #headerCarousel .carousel-control-next {
     display: none;
   }
 }
 
-.navbar-nav .nav-link.greylogo {
+.navbar-nav .nav-link.greylogo { /* estil dels enllaços del navbar */
   color: #d4d4d4;
   transition: transform 0.2s ease-in-out;
 }
 
-.navbar-nav .nav-link.greylogo:hover,
+.navbar-nav .nav-link.greylogo:hover, /* efecte hover i focus dels enllaços del navbar */
 .navbar-nav .nav-link.greylogo:focus {
   transform: scale(1.1);
   color: #bebebe;
 }
 
-#partidos .accordion-item {
+#partidos .accordion-item { /* estil dels items de l'acordio de partits */
   border-color: #dee2e6;
 }
 
-#partidos .accordion-button {
+#partidos .accordion-button { /* estil dels botons de l'acordio de partits */
   background-color: #700000;
   color: #d4d4d4;
   font-weight: normal;
 }
 
-#partidos .accordion-button:not(.collapsed) {
+#partidos .accordion-button:not(.collapsed) { /* estil dels botons de l'acordio de partits quan estan oberts */
   background-color: #60000a;
   color: #d4d4d4;
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .125);
 }
 
-#partidos .accordion-body {
+#partidos .accordion-body { /* estil del cos de l'acordio de partits */
   background-color: white;
   padding: 1rem 1.25rem;
 }
 
-#partidos .nav-tabs .nav-link {
+#partidos .nav-tabs .nav-link { /* estil dels enllaços de les pestanyes de partits */
   color: #60000a;
   border-color: #d4d4d4 #d4d4d4 #d4d4d4;
 }
 
-#partidos .nav-tabs .nav-link.active,
+#partidos .nav-tabs .nav-link.active, /* estil dels enllaços actius i hover de les pestanyes de partits */
 #partidos .nav-tabs .nav-item.show .nav-link,
 #partidos .nav-tabs .nav-link:hover {
   color: white;
@@ -167,31 +166,31 @@ header {
   color: white !important;
 }
 
-.verdeclaro {
+.rojofondo { /*vermell*/
   background-color: #630000;
 }
 
-#clasificacion table thead th {
+#clasificacion table thead th { /* estil de les capçaleres de la taula de classificacio */
   background-color: #630000;
   color: #d4d4d4;
 }
 
-#clasificacion .table-striped > tbody > tr:nth-child(odd) > * {
+#clasificacion .table-striped > tbody > tr:nth-child(odd) > * { /* estil de les files imparells de la taula de classificacio */
   background-color: #9e0000;
   color: #d4d4d4
 }
 
-#clasificacion .table-striped > tbody > tr:nth-child(even) > * {
+#clasificacion .table-striped > tbody > tr:nth-child(even) > * { /* estil de les files parells de la taula de classificacio */
   background-color: #630000;
   color: #d4d4d4
 }
 
-#clasificacion .table-hover > tbody > tr:hover > * {
+#clasificacion .table-hover > tbody > tr:hover > * { /* estil de les files al passar el ratoli per sobre de la taula de classificacio */
   text-shadow: 0 2px 8px rgba(255, 255, 255, 0.6);
   color:#ffffff
 }
 
-#datos .row > div > div {
+#datos .row > div > div { /* estil de les cartes de dades estadistiques */
   position: relative;
   background-size: cover;
   background-position: center;
@@ -199,7 +198,7 @@ header {
   transition: transform 0.3s ease-in-out;
 }
 
-#datos .row > div > div::before {
+#datos .row > div > div::before { /* capa de fons amb color semi-transparent per a les cartes de dades estadistiques */
   content: "";
   position: absolute;
   top: 0;
@@ -212,57 +211,57 @@ header {
   transition: background-color 0.3s ease-in-out;
 }
 
-#datos .row > div > div > * {
+#datos .row > div > div > * { /* contingut de les cartes de dades estadistiques */
   position: relative;
   z-index: 2;
 }
 
-#datos .row .col-lg-4 > div h4,
-#datos .row .col-lg-4 > div li {
+#datos .row .col-lg-4 > div h4, 
+#datos .row .col-lg-4 > div li { /* transicions de text de les cartes de dades estadistiques */
   transition: text-shadow 0.3s ease-in-out;
 }
 
-#datos .row .col-lg-4 > div:hover {
+#datos .row .col-lg-4 > div:hover { /* efecte hover de les cartes de dades estadistiques */
   transform: scale(1.03);
 }
 
-#datos .row .col-lg-4 > div:hover::before {
+#datos .row .col-lg-4 > div:hover::before { /* canvi de color de fons al fer hover a les cartes de dades estadistiques */
   background-color: rgba(112, 0, 0, 0.81);
 }
 
-#datos .row .col-lg-4 > div:hover h4 {
+#datos .row .col-lg-4 > div:hover h4 { /* efecte hover del text h4 a les cartes de dades estadistiques */
   text-shadow: 1px 1px 3px rgb(0, 0, 0);
 }
 
-#datos .row .col-lg-4 > div:hover li {
+#datos .row .col-lg-4 > div:hover li { /* efecte hover del text li a les cartes de dades estadistiques */
   text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
 }
 
-.card-goals {
+.card-goals { /* imatge de fons de la carta de gols */
   background-image: url('./imagenes/AWARDS/Muller1.png');
 }
 
-.card-asists {
+.card-asists { /* imatge de fons de la carta d'assistencies */
   background-image: url('./imagenes/AWARDS/kaka.png');
 }
 
-.card-clean {
+.card-clean { /* imatge de fons de la carta de porters */
   background-image: url('./imagenes/AWARDS/casillas.png');
 }
 
-.card-pases {
+.card-pases { /* imatge de fons de la carta de passades */
   background-image: url('./imagenes/AWARDS/xavi.png');
 }
 
-.card-ga {
+.card-ga { /* imatge de fons de la carta de g+a */
   background-image: url('./imagenes/AWARDS/muller2.png');
 }
 
-.card-awards {
+.card-awards { /* imatge de fons de la carta de premis */
   background-image: url('./imagenes/AWARDS/premios.png');
 }
 
-#selecciones .row > div > div {
+#selecciones .row > div > div { /* estil de les cartes de seleccions per continents  mateix format que les stats*/
   position: relative;
   background-size: cover;
   background-position: center;
@@ -309,42 +308,42 @@ header {
   text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
 }
 
-.card-europe {
+.card-europe { /* imatge de fons de la carta d'europa */
   background-image: url('./imagenes/EUROPA.png');
 }
 
-.card-america {
+.card-america { /* imatge de fons de la carta d'america */
   background-image: url('./imagenes/AMERICA.png');
 }
 
-.card-africa {
+.card-africa { /* imatge de fons de la carta d'africa */
   background-image: url('./imagenes/AFRICA.png');
 }
 
-.card-asia {
+.card-asia { /* imatge de fons de la carta d'asia */
   background-image: url('./imagenes/ASIA.png');
 }
 
-.card-oceania {
+.card-oceania { /* imatge de fons de la carta d'oceania */
   background-image: url('./imagenes/OCEANIA.png');
 }
 
-#jabulani-ball {
+#jabulani-ball { /* estil i animacio de la bola Jabulani */
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
   transition: filter 0.3s ease-in-out;
 }
 
-#jabulani-ball:hover {
+#jabulani-ball:hover { /* efecte hover de la bola Jabulani */
   filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
 }
 
-.fifa-blue {
+.fifa-blue { /* contenidor FIFA+ amb fons blau + imatge de fons */
   position: relative;
   overflow: hidden;
-  background: none; /* eliminamos fondo sólido */
+  background: none; 
 }
 
-.fifa-blue::before {
+.fifa-blue::before { /* Capa de fons amb imatge i degradat blau */
   content: "";
   position: absolute;
   top: 0;
@@ -352,7 +351,7 @@ header {
   width: 100%;
   height: 100%;
 
-  /* gradiente azul encima + misma imagen de fondo */
+  
   background-image: 
     linear-gradient(180deg, rgba(2,18,44,0.95), rgba(2,18,44,0.95)),
     url('./imagenes/espiral-suave-curvas-luz-monocromaticas-ruido-fondo-abstracto-textura-granulada-gris-oscuro_976983-412.avif');
@@ -361,14 +360,14 @@ header {
   background-position: center;
   background-repeat: no-repeat;
 
-  z-index: -1; /* queda detrás del contenido */
+  z-index: -1; 
 }
 
-#fifa .row img {
+#fifa .row img { /* estil de les imatges de FIFA+ */
   transition: all 0.3s ease-in-out;
 }
 
-#fifa .row img:hover {
+#fifa .row img:hover { /* efecte hover de les imatges de FIFA+ */
   box-shadow: 0 8px 20px rgba(255, 255, 255, 0.25);
   transform: scale(1.03);
 }
