@@ -1,103 +1,115 @@
-/* Fuente Coolvetica */
-@font-face {
-  font-family: 'Coolvetica';
-  src: url('coolvetica/CoolveticaRg.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-/* Fuente South Africa 2010 */
 @font-face {
   font-family: 'SouthAfrica';
-  src: url('south africa/south afirkas 2100.ttf') format('opentype');
+  src: url('./fuentes/south africa/south afirkas 2100.ttf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
+
+body {
+  font-family: 'SouthAfrica', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(to bottom, #630000, #a10000); /* degradado original */
+  background-attachment: fixed;
+  position: relative; /* necesario para el pseudo-elemento */
+}
+
+body::before {
+  content: "";
+  position: fixed;       /* queda fijo mientras se hace scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./imagenes/fondo-de-gradiente-abstracto-con-un-efecto-granulado.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.3;          /* ajusta la opacidad deseada */
+  z-index: -1;            /* detrás del contenido */
+}
+
 
 header {
   font-family: 'SouthAfrica', sans-serif;
 }
 
-body {
-  font-family: 'SouthAfrica', sans-serif;
-
-
-  background: linear-gradient(to bottom, #630000, #a10000);
-
-  /* MUY IMPORTANTE: 
-    Esto fija el degradado para que no se mueva 
-    cuando haces scroll.
-  */
-  background-attachment: fixed;
-
-  /* Opcional: 
-    Asegura que el degradado cubre toda la altura, 
-    incluso si la página tiene poco contenido.
-  */
-  min-height: 100vh; 
-}
-.greylogo {
-color: #d4d4d4;
-}
-/* Navbar */
 .red-gradient {
   background: linear-gradient(90deg, #840000,#a00000, #a00000, #f27777) !important;
 }
-.red{
+
+.container-fluid.grey-gradient {
+  position: relative;
+  overflow: hidden;
+  background: none; /* eliminamos fondo del contenedor */
+}
+
+.container-fluid.grey-gradient::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* gradiente encima + imagen de fondo con opacidad */
+  background-image: 
+    linear-gradient(90deg, rgba(212,212,212,0.85), rgba(170,170,170,0.85), rgba(229,229,229,0.85)),
+    url('./imagenes/fondo-de-gradiente-abstracto-con-un-efecto-granulado.jpg');
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  z-index: -1; /* queda detrás del contenido */
+}
+.red {
   color: #630000;
 }
+
+.greylogo {
+  color: #d4d4d4;
+}
+
 .navbar {
-  /* box-shadow: [offset-y] [offset-x] [blur] [color-con-opacidad]; */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
-.grey-gradient {
-  background: linear-gradient(90deg, #d4d4d4,#aaaaaa,#e5e5e5) !important;
-}
-
-.green-gradient {
-  background: linear-gradient(90deg, #008614,#00b749,#00aa17) !important;
-}
-
-/* Carrusel */
-#headerCarousel {
-  max-width: 200px;  /* tamaño máximo del carrusel */
-  margin: 0 auto;
-}
-
-#headerCarousel img {
-  border-radius: 30px;
-  height: 100px;     /* ajusta la altura que quieras */
-  margin: 0px;
-  object-fit: cover; /* recorta sin deformar */
-}
-
 .logo-mundial {
-  height: 80px; 
-  /* Prueba a cambiar 60px por 50px o 70px si lo prefieres */
+  height: 80px;
 }
 
-/* Cuando la pantalla sea 'md' (768px) o más grande, 
-  el logo volverá a tener 100px de alto 
-*/
 @media (min-width: 768px) {
   .logo-mundial {
     height: 100px;
   }
 }
 
-#headerCarousel .carousel-item img {
-  height: 90px; /* Misma altura que el logo en móvil */
-  object-fit: contain; /* Evita que la imagen se distorsione (se recorta) */
-  width: 100%;       /* Asegura que ocupe todo el espacio del carrusel */
+#headerCarousel {
+  max-width: 200px;
+  margin: 0 auto;
 }
 
-/* En 'md' (768px) o más grande, vuelve a la altura automática */
+#headerCarousel img {
+  border-radius: 30px;
+  height: 100px;
+  margin: 0px;
+  object-fit: cover;
+}
+
+#headerCarousel .carousel-item img {
+  height: 90px;
+  object-fit: contain;
+  width: 100%;
+}
+
 @media (min-width: 768px) {
   #headerCarousel .carousel-item img {
     height: auto;
     object-fit: initial;
   }
 }
+
 @media (max-width: 767.98px) {
   #headerCarousel .carousel-control-prev,
   #headerCarousel .carousel-control-next {
@@ -105,95 +117,88 @@ color: #d4d4d4;
   }
 }
 
-
-
 .navbar-nav .nav-link.greylogo {
   color: #d4d4d4;
-  transition: transform 0.2s ease-in-out; 
+  transition: transform 0.2s ease-in-out;
 }
 
 .navbar-nav .nav-link.greylogo:hover,
 .navbar-nav .nav-link.greylogo:focus {
-  transform: scale(1.1); 
+  transform: scale(1.1);
   color: #bebebe;
 }
 
-/* Color del encabezado (Header: #, National Team, PL...) */
-/*
-  LA SOLUCIÓN: Añadimos 'th' al selector para apuntar
-  directamente a las CELDAS del encabezado.
-*/
-#clasificacion table thead th {
-  background-color: #630000; /* Tu fondo verde */
-  color: #d4d4d4;            /* Tu texto rojo oscuro */ 
+#partidos .accordion-item {
+  border-color: #dee2e6;
+}
+
+#partidos .accordion-button {
+  background-color: #700000;
+  color: #d4d4d4;
+  font-weight: normal;
+}
+
+#partidos .accordion-button:not(.collapsed) {
+  background-color: #60000a;
+  color: #d4d4d4;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .125);
+}
+
+#partidos .accordion-body {
+  background-color: white;
+  padding: 1rem 1.25rem;
+}
+
+#partidos .nav-tabs .nav-link {
+  color: #60000a;
+  border-color: #d4d4d4 #d4d4d4 #d4d4d4;
+}
+
+#partidos .nav-tabs .nav-link.active,
+#partidos .nav-tabs .nav-item.show .nav-link,
+#partidos .nav-tabs .nav-link:hover {
+  color: white;
+  background-color: #680000;
+  border-color: #60000a #60000a #60000a;
+}
+
+#partidos .list-group-item span.badge.bg-danger {
+  background-color: #680000!important;
+  color: white !important;
 }
 
 .verdeclaro {
   background-color: #630000;
 }
 
-.fifa-blue {
-  background-color: #02122c;
-}
-/* Color de las filas "rayadas" (striping) */
-#clasificacion .table-striped > tbody > tr:nth-child(odd) > * {
-  background-color: #9e0000; /* Verde claro para las rayas */
-color: #d4d4d4
+#clasificacion table thead th {
+  background-color: #630000;
+  color: #d4d4d4;
 }
 
-#clasificacion .table-striped > tbody > tr:nth-child(even) > * {
-  background-color: #630000; /* Fondo blanco para las otras filas */
+#clasificacion .table-striped > tbody > tr:nth-child(odd) > * {
+  background-color: #9e0000;
   color: #d4d4d4
 }
 
-/* Color al pasar el ratón (hover) */
+#clasificacion .table-striped > tbody > tr:nth-child(even) > * {
+  background-color: #630000;
+  color: #d4d4d4
+}
+
 #clasificacion .table-hover > tbody > tr:hover > * {
   text-shadow: 0 2px 8px rgba(255, 255, 255, 0.6);
   color:#ffffff
 }
 
-#fifa .row img {
-  /* Preparamos la transición para que el efecto sea suave */
-  transition: all 0.3s ease-in-out;
+#datos .row > div > div {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease-in-out;
 }
 
-#fifa .row img:hover {
-  /* Añadimos una sombra más grande y oscura */
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.25);
-  
-  /* También añadimos un ligero zoom para que "salte" */
-  transform: scale(1.03); 
-}
-
-/* Estilos base para todas las tarjetas de continente */
-#datos .row > div > div { /* Selecciona el div interior con las clases */
-  position: relative; /* Necesario para superponer el color oscuro */
-  background-size: cover; /* Hace que la imagen cubra todo el div */
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-}
-
-/* Pseudo-elemento para añadir una capa oscura semitransparente */
-#datos.row > div > div::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #680000ec; /* Color negro con 60% de opacidad */
-  border-radius: inherit; /* Hereda el redondeo del div padre */
-  z-index: 1; /* Se pone encima del fondo pero debajo del texto */
-}
-
-#datos .row > div > div { /* Selecciona el div interior con las clases */
-  position: relative; /* Necesario para superponer el color oscuro */
-  background-size: cover; /* Hace que la imagen cubra todo el div */
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-}
-
-/* Pseudo-elemento para añadir una capa oscura semitransparente */
 #datos .row > div > div::before {
   content: "";
   position: absolute;
@@ -201,12 +206,12 @@ color: #d4d4d4
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #680000ec; /* Color negro con 60% de opacidad */
-  border-radius: inherit; /* Hereda el redondeo del div padre */
-  z-index: 1; /* Se pone encima del fondo pero debajo del texto */
+  background-color: #680000ec;
+  border-radius: inherit;
+  z-index: 1;
+  transition: background-color 0.3s ease-in-out;
 }
 
-/* Asegura que el contenido (texto) esté por encima de la capa oscura */
 #datos .row > div > div > * {
   position: relative;
   z-index: 2;
@@ -217,6 +222,14 @@ color: #d4d4d4
   transition: text-shadow 0.3s ease-in-out;
 }
 
+#datos .row .col-lg-4 > div:hover {
+  transform: scale(1.03);
+}
+
+#datos .row .col-lg-4 > div:hover::before {
+  background-color: rgba(112, 0, 0, 0.81);
+}
+
 #datos .row .col-lg-4 > div:hover h4 {
   text-shadow: 1px 1px 3px rgb(0, 0, 0);
 }
@@ -225,31 +238,38 @@ color: #d4d4d4
   text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
 }
 
-#datos .row .col-lg-4 > div {
-  transition: transform 0.3s ease-in-out;
+.card-goals {
+  background-image: url('./imagenes/AWARDS/Muller1.png');
 }
 
-#datos .row > div > div::before {
-  transition: background-color 0.3s ease-in-out;
+.card-asists {
+  background-image: url('./imagenes/AWARDS/kaka.png');
 }
 
-#datos .row .col-lg-4 > div:hover {
-  transform: scale(1.03);
+.card-clean {
+  background-image: url('./imagenes/AWARDS/casillas.png');
 }
 
-#datos .row .col-lg-4 > div:hover::before {
-  background-color: rgba(112, 0, 0, 0.81);
+.card-pases {
+  background-image: url('./imagenes/AWARDS/xavi.png');
 }
+
+.card-ga {
+  background-image: url('./imagenes/AWARDS/muller2.png');
+}
+
+.card-awards {
+  background-image: url('./imagenes/AWARDS/premios.png');
+}
+
 #selecciones .row > div > div {
-  position: relative; /* Necesario para superponer el pseudo-elemento */
+  position: relative;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* Transición para el efecto de zoom (scale) */
   transition: transform 0.3s ease-in-out;
 }
 
-/* Pseudo-elemento para añadir la capa oscura semitransparente */
 #selecciones .row > div > div::before {
   content: "";
   position: absolute;
@@ -257,148 +277,98 @@ color: #d4d4d4
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #680000ec; /* Tu color oscuro con opacidad */
-  border-radius: inherit; /* Hereda el redondeo del div padre */
-  z-index: 1; /* Se pone encima del fondo pero debajo del texto */
-  /* Transición para el cambio de color en hover */
+  background-color: #680000ec;
+  border-radius: inherit;
+  z-index: 1;
   transition: background-color 0.3s ease-in-out;
 }
 
-/* Asegura que el contenido (texto) esté por encima de la capa oscura */
 #selecciones .row > div > div > * {
   position: relative;
   z-index: 2;
 }
 
-/* Transición para la sombra del texto en hover */
 #selecciones .row .col-lg-4 > div h4,
 #selecciones .row .col-lg-4 > div li {
   transition: text-shadow 0.3s ease-in-out;
 }
 
-
-/* --- EFECTOS HOVER --- */
-
-/* Efecto de zoom a la tarjeta */
 #selecciones .row .col-lg-4 > div:hover {
   transform: scale(1.03);
 }
 
-/* Cambio de color de la capa oscura al pasar el ratón */
 #selecciones .row .col-lg-4 > div:hover::before {
   background-color: rgba(112, 0, 0, 0.81);
 }
 
-/* Sombra en el título al pasar el ratón */
 #selecciones .row .col-lg-4 > div:hover h4 {
   text-shadow: 1px 1px 3px rgb(0, 0, 0);
 }
 
-/* Sombra en la lista al pasar el ratón */
 #selecciones .row .col-lg-4 > div:hover li {
   text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
 }
 
-/* --- Define la imagen de fondo para cada continente --- */
-
-/* Reemplaza './ruta/...' con la ruta correcta a TUS imágenes */
 .card-europe {
-  background-image: url('./imagenes/EUROPA.png'); /* ¡CAMBIA ESTA RUTA! */
+  background-image: url('./imagenes/EUROPA.png');
 }
 
 .card-america {
-  background-image: url('./imagenes/AMERICA.png'); /* ¡CAMBIA ESTA RUTA! */
+  background-image: url('./imagenes/AMERICA.png');
 }
 
 .card-africa {
-  background-image: url('./imagenes/AFRICA.png'); /* ¡CAMBIA ESTA RUTA! */
+  background-image: url('./imagenes/AFRICA.png');
 }
 
 .card-asia {
-  background-image: url('./imagenes/ASIA.png'); /* ¡CAMBIA ESTA RUTA! */
+  background-image: url('./imagenes/ASIA.png');
 }
 
 .card-oceania {
-  background-image: url('./imagenes/OCEANIA.png'); /* ¡CAMBIA ESTA RUTA! */
+  background-image: url('./imagenes/OCEANIA.png');
 }
 
-.card-goals {
-  background-image: url('./imagenes/AWARDS/Muller1.png'); /* ¡CAMBIA ESTA RUTA! */
+#jabulani-ball {
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+  transition: filter 0.3s ease-in-out;
 }
 
-.card-asists {
-  background-image: url('./imagenes/AWARDS/kaka.png'); /* ¡CAMBIA ESTA RUTA! */
+#jabulani-ball:hover {
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
 }
 
-.card-clean {
-  background-image: url('./imagenes/AWARDS/casillas.png'); /* ¡CAMBIA ESTA RUTA! */
+.fifa-blue {
+  position: relative;
+  overflow: hidden;
+  background: none; /* eliminamos fondo sólido */
 }
 
-.card-pases {
-  background-image: url('./imagenes/AWARDS/xavi.png'); /* ¡CAMBIA ESTA RUTA! */
+.fifa-blue::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* gradiente azul encima + misma imagen de fondo */
+  background-image: 
+    linear-gradient(180deg, rgba(2,18,44,0.95), rgba(2,18,44,0.95)),
+    url('./imagenes/espiral-suave-curvas-luz-monocromaticas-ruido-fondo-abstracto-textura-granulada-gris-oscuro_976983-412.avif');
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  z-index: -1; /* queda detrás del contenido */
 }
 
-.card-ga {
-  background-image: url('./imagenes/AWARDS/muller2.png'); /* ¡CAMBIA ESTA RUTA! */
+#fifa .row img {
+  transition: all 0.3s ease-in-out;
 }
 
-.card-awards {
-  background-image: url('./imagenes/AWARDS/premios.png'); /* ¡CAMBIA ESTA RUTA! */
-}
-
-/* --- ACCORDION STYLE OVERRIDES --- */
-
-/* Style for each accordion item (optional: border color) */
-#partidos .accordion-item {
-  border-color: #dee2e6; /* Example: light grey border */
-  /* background-color: #f8f9fa; */ /* Uncomment to change item background */
-}
-
-/* Style for the accordion button (header background and text color) */
-#partidos .accordion-button {
-  background-color: #700000; /* Example: light grey background */
-  color: #d4d4d4;           /* Example: dark text */
-  font-weight: normal;         /* Make header text bold */
-}
-
-/* Style for the accordion button WHEN IT'S EXPANDED (active) */
-#partidos .accordion-button:not(.collapsed) {
-  background-color: #60000a; /* Example: Bootstrap's red color */
-  color: #d4d4d4;              /* White text when expanded */
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .125); /* Default Bootstrap shadow */
-}
-
-/* Change the color of the accordion icon (arrow) */
-/* This uses SVG filters, a bit complex but effective */
-
-/* Style for the accordion body (content background) */
-#partidos .accordion-body {
-  background-color: white; /* Example: white background for content */
-  padding: 1rem 1.25rem;  /* Default Bootstrap padding */
-}
-
-/* --- TABS INSIDE ACCORDION --- */
-
-/* Style for the inactive tabs */
-#partidos .nav-tabs .nav-link {
-  color: #60000a; /* Example: Red text for inactive tabs */
-  border-color: #d4d4d4 #d4d4d4 #d4d4d4; /* Match bottom border to active color */
-}
-
-/* Style for the active tab and hover state */
-#partidos .nav-tabs .nav-link.active,
-#partidos .nav-tabs .nav-item.show .nav-link,
-#partidos .nav-tabs .nav-link:hover {
-  color: white;              /* White text */
-  background-color: #680000; /* Red background */
-  border-color: #60000a #60000a #60000a; /* Red border */
-}
-
-#partidos .list-group-item span.badge.bg-danger {
-  background-color: #680000!important; /* Cambia este color y ¡OJO con el !important */
-  color: white !important;             /* Cambia si hace falta */
-}
-
-.imagen-balon {
-  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+#fifa .row img:hover {
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.25);
+  transform: scale(1.03);
 }

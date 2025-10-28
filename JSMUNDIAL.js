@@ -1,26 +1,12 @@
-// 1. Registrar el plugin de ScrollTrigger
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger); // Activem el plugin ScrollTrigger
 
-// 2. Animar la imagen del balón
-gsap.to(".imagen-balon", {
-  
-  rotation: 360, // La animación: una vuelta completa (puedes usar rotationY: 360 para un "flip")
-  ease: "none",  // Sin aceleración
-  
-  // 3. Configurar el ScrollTrigger
+gsap.to("#jabulani-ball", {
+  rotation: 360, // Gira la pilota una volta completa
+  ease: "power2.inOut", // Suavitza l’inici i el final del gir
   scrollTrigger: {
-    trigger: "#pelota", // El elemento que "dispara" Y se fija
-    pin: true,         // ¡Fija la sección #pelota!
-    
-    start: "top top",  // La animación empieza cuando la parte de arriba de #pelota llega al borde de arriba de la pantalla
-    
-    // La animación durará mientras el usuario baja 500px
-    // (Puedes aumentar este valor para que la rotación sea más lenta)
-    end: "+=1500", 
-    
-    scrub: 1, // Conecta suavemente la animación al scroll (1 segundo de suavizado)
-    
-    // Opcional: Descomenta la línea de abajo para ver las guías de inicio y fin
-    // markers: true 
+    trigger: "#pelota",  // Secció que activa l’animació
+    start: "top 70%",   // Comença quan el top toca el 70% de la pantalla
+    end: "bottom 20%",  // Acaba quan el bottom toca el 20% de la pantalla
+    scrub: 3, // Vincula el gir al scroll amb suavitat
   }
-});
+}); 
