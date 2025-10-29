@@ -21,7 +21,7 @@ body::before { /* Capa de imatge de fons */
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('./imagenes/fondo-de-gradiente-abstracto-con-un-efecto-granulado.jpg');
+  background-image: url('./imagenes/fondo-de-gradiente-abstracto-con-un-efecto-granulado.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -54,7 +54,7 @@ header {
 
   background-image: 
     linear-gradient(90deg, rgba(212,212,212,0.85), rgba(170,170,170,0.85), rgba(229,229,229,0.85)),
-    url('./imagenes/fondo-de-gradiente-abstracto-con-un-efecto-granulado.jpg');
+    url('./imagenes/fondo-de-gradiente-abstracto-con-un-efecto-granulado.webp');
   
   background-size: cover;
   background-position: center;
@@ -440,7 +440,7 @@ header {
 
   background-image: 
     linear-gradient(180deg, rgba(0, 0, 0, 0.958), rgba(0, 0, 0, 0.766)),
-    url('./imagenes/fondo-de-gradiente-abstracto-con-un-efecto-granulado.jpg');
+    url('./imagenes/fondo-de-gradiente-abstracto-con-un-efecto-granulado.webp');
   
   background-size: cover;
   background-position: center;
